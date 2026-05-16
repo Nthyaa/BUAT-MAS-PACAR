@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Special FOR U ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 550px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
+            padding: 30px 25px 40px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .judul {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #ffe6f0;
+            text-shadow: 0 2px 10px rgba(255, 80, 120, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .sub {
+            color: #ffb7c5;
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed rgba(255, 200, 210, 0.4);
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        /* area kado */
+        .kado-area {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 60px;
+            padding: 25px 15px;
+            margin: 15px 0 20px;
+            transition: all 0.2s;
+        }
+
+        .kode-tersegel {
+            font-size: 1rem;
+            color: #ffd9e2;
+            background: #2c2f48;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,200,220,0.5);
+        }
+
+        .kode-tersegel:hover {
+            background: #ff4d6d;
+            color: white;
+            transform: scale(1.02);
+            letter-spacing: 1px;
+        }
+
+        .kotak-pesan {
+            background: #fffef7;
+            border-radius: 32px;
+            padding: 25px 20px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,200,0.6);
+        }
+
+        .pesan-rahasia {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #c44569;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+
+        .quote-cinta {
+            font-style: italic;
+            color: #2c3e66;
+            background: #f9e3e8;
+            padding: 12px;
+            border-radius: 28px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .tombol-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn {
+            border: none;
+            background: #1e2a47;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e63946;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #ffb7c5;
+            color: #ffb7c5;
+        }
+
+        .btn-outline:hover {
+            background: #ffb7c5;
+            color: #1e1e2a;
+            transform: scale(0.97);
+        }
+
+        .heart-anim {
+            font-size: 2.5rem;
+            animation: pulse 1s infinite;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; text-shadow: 0 0 0 pink;}
+            100% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 8px #ff4d6d;}
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 0.7rem;
+            color: #d9b4c2;
+        }
+
+        @media (max-width: 480px) {
+            .card { padding: 20px 18px 30px; }
+            .pesan-rahasia { font-size: 1.2rem; }
+            .judul { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card" id="app">
+    <div class="heart-anim">💘</div>
+    <div class="judul">✦ BUAT MAS PACAR ✦</div>
+    <div class="sub">💌 Jangan bete lagi yaa 💌</div>
+
+    <div class="kado-area">
+        <div class="kode-tersegel" id="bukaKodeBtn">
+            🎁 ▸ Klik aku dulu ◂ 🎁
+        </div>
+    </div>
+
+    <div class="kotak-pesan" id="kotakPesan" style="display: none;">
+        <div class="pesan-rahasia" id="teksPesan">
+            ❤️ MBG ~ MY BOY GUE.
+        </div>
+        <div class="quote-cinta" id="quoteRandom">
+            "HALOO GANTENG"
+        </div>
+        <div class="tombol-group">
+            <button class="btn btn-primary" id="gantiPesanBtn">✨ Kata-Kata Random ✨</button>
+            <button class="btn btn-outline" id="quoteBaruBtn">📖 Ayat Alkitab</button>
+            <button class="btn btn-outline" id="loveEffectBtn">💖 Love Attack</button>
+        </div>
+    </div>
+    <footer>🤍 buat kamu satu-satunya • jangan lupa senyum 🤍</footer>
+</div>
+
+<script>
+    const daftarPesan = [
+        "Kalau kamu lagi down, inget aja kamu adalah 'main character' dihidup aku tau",
+        "Kamu pulang masi lamaa duuuuh",
+        "Aku kangen banget",
+        "Kapannn pulaangg",
+        "Kamu tipe aku banget aduhh",
+        "Jangan ngerasa sendiri yaa, ada aku disinii (walau cuma lewat vc sama chat)",
+        "You're my player 2, and i'll never press quit.",
+        "Malem-malam kangen kamu",
+        "Bisa gasi mimpinya satu server jadi kita mibar (mimpi bareng)",
+        "Kepikiran kamuu"
+    ];
+
+    const daftarQuote = [
+    "❝ Kasih itu sabar; kasih itu murah hati; ia tidak cemburu. Ia tidak memegahkan diri dan tidak sombong. ❞ — 1 Korintus 13:4",
+    "❝ Di atas semuanya, kasihilah seorang akan yang lain, karena kasih menutupi banyak sekali dosa. ❞ — 1 Petrus 4:8",
+    "❝ Jadilah seorang yang saling mengasihi dengan kasih persaudaraan, dan saling mendahului dalam memberi hormat. ❞ — Roma 12:10",
+    "❝ Karena masa depan sungguh ada, dan harapanmu tidak akan hilang. ❞ — Amsal 23:18",
+    "❝ Dua orang lebih baik dari pada seorang seorang, karena mereka menerima upah yang baik dalam jerih payah mereka. ❞ — Pengkhotbah 4:9",
+    "❝ Tunjukkanlah kasih dalam perbuatan dan dalam kebenaran. ❞ — 1 Yohanes 3:18",
+    "❝ Karena Tuhan itu kasih; barangsiapa tetap berada di dalam kasih, ia tetap berada di dalam Tuhan dan Tuhan di dalam dia. ❞ — 1 Yohanes 4:16",
+    "❝ Hendaklah kamu saling mengasihi, seperti Aku telah mengasihi kamu. ❞ — Yohanes 15:12",
+    "❝ Janganlah hendaknya kasih itu pura-pura! Jauhilah yang jahat dan lakukanlah yang baik. ❞ — Roma 12:9",
+    "❝ Hendaklah perkataan Kristus diam dengan segala kekayaannya di antara kamu, sehingga kamu dengan segala hikmat mengajar dan menegur seorang akan yang lain. ❞ — Kolose 3:16"
+];
+
+    const bukaBtn = document.getElementById('bukaKodeBtn');
+    const kotakPesanDiv = document.getElementById('kotakPesan');
+    const teksPesanSpan = document.getElementById('teksPesan');
+    const quoteRandomSpan = document.getElementById('quoteRandom');
+    const gantiPesanBtn = document.getElementById('gantiPesanBtn');
+    const quoteBaruBtn = document.getElementById('quoteBaruBtn');
+    const loveEffectBtn = document.getElementById('loveEffectBtn');
+
+    let isOpened = false;
+
+    function getRandomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function updateRandomPesan() {
+        if (!isOpened) return; 
+        const newMsg = getRandomItem(daftarPesan);
+        teksPesanSpan.innerHTML = newMsg;
+        // efek getar kecil (optional)
+        teksPesanSpan.style.transform = "scale(1.02)";
+        setTimeout(() => { teksPesanSpan.style.transform = "scale(1)"; }, 150);
+    }
+
+    function updateRandomQuote() {
+        if (!isOpened) return;
+        const newQuote = getRandomItem(daftarQuote);
+        quoteRandomSpan.innerHTML = newQuote;
+        quoteRandomSpan.style.opacity = "0.7";
+        setTimeout(() => { quoteRandomSpan.style.opacity = "1"; }, 100);
+    }
+
+    // efek love (tambahan visual seru)
+    function showLoveEffect() {
+        if (!isOpened) {
+            const tempHint = document.createElement('div');
+            tempHint.innerText = "💢 Sayang harus buka kode dulu baru fitur unlock! 💢";
+            tempHint.style.position = 'fixed';
+            tempHint.style.bottom = '20px';
+            tempHint.style.left = '50%';
+            tempHint.style.transform = 'translateX(-50%)';
+            tempHint.style.backgroundColor = '#ff4d6d';
+            tempHint.style.color = 'white';
+            tempHint.style.padding = '12px 24px';
+            tempHint.style.borderRadius = '60px';
+            tempHint.style.fontWeight = 'bold';
+            tempHint.style.zIndex = '999';
+            tempHint.style.fontSize = '0.8rem';
+            tempHint.style.boxShadow = '0 5px 15px black';
+            document.body.appendChild(tempHint);
+            setTimeout(() => { tempHint.remove(); }, 2000);
+            return;
+        }
+
+        // efek hati - hati melayang
+        for (let i = 0; i < 14; i++) {
+            const heart = document.createElement('div');
+            heart.innerHTML = ['❤️', '💖', '💘', '💗', '💓', '🧡', '💕'][Math.floor(Math.random() * 7)];
+            heart.style.position = 'fixed';
+            heart.style.fontSize = (Math.random() * 20 + 18) + 'px';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.bottom = '-30px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '9999';
+            heart.style.opacity = '0.9';
+            heart.style.transition = 'all 2s ease-out';
+            document.body.appendChild(heart);
+
+            // animasi naik
+            setTimeout(() => {
+                heart.style.transform = `translateY(-${window.innerHeight + 50}px) rotate(${Math.random() * 40 - 20}deg)`;
+                heart.style.opacity = '0';
+            }, 10);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 2100);
+        }
+
+        // sedikit ubah teks sementara (optional)
+        const originalText = teksPesanSpan.innerHTML;
+        teksPesanSpan.innerHTML = originalText + " 💥💞";
+        setTimeout(() => {
+            if (isOpened) teksPesanSpan.innerHTML = originalText;
+        }, 800);
+    }
+
+    function bukaKotakPesan() {
+        if (isOpened) return;
+
+        isOpened = true;
+        kotakPesanDiv.style.display = "block";
+        kotakPesanDiv.style.animation = "fadeInUp 0.4s ease";
+     
+        teksPesanSpan.innerHTML = getRandomItem(daftarPesan);
+        quoteRandomSpan.innerHTML = getRandomItem(daftarQuote);
+        
+        bukaBtn.innerHTML = "🔓 Kode sudah terbuka! 💌";
+        bukaBtn.style.background = "#3a2e4d";
+        bukaBtn.style.cursor = "default";
+        bukaBtn.style.opacity = "0.8";
+        bukaBtn.style.boxShadow = "none";
+        
+        // tambahkan efek kejutan (love effect kecil otomatis)
+        setTimeout(() => {
+            if (isOpened) showLoveEffect();
+        }, 200);
+    }
+
+    // style animasi
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .btn:active { transform: scale(0.96); }
+        .kode-tersegel:active { transform: scale(0.98); }
+    `;
+    document.head.appendChild(styleSheet);
+
+    // event listeners
+    bukaBtn.addEventListener('click', bukaKotakPesan);
+    gantiPesanBtn.addEventListener('click', updateRandomPesan);
+    quoteBaruBtn.addEventListener('click', updateRandomQuote);
+    loveEffectBtn.addEventListener('click', showLoveEffect);
+
+    // ========== EKSTRA: Sentuhan pesan surprise saat halaman dimuat (tooltip kecil) ==========
+    window.addEventListener('load', () => {
+        const tempWelcome = document.createElement('div');
+        tempWelcome.innerText = "👋 Hey! klik 'Klik aku dulu' untuk melihat kode cinta rahasia.";
+        tempWelcome.style.position = 'fixed';
+        tempWelcome.style.top = '15px';
+        tempWelcome.style.left = '50%';
+        tempWelcome.style.transform = 'translateX(-50%)';
+        tempWelcome.style.backgroundColor = '#2c2f48';
+        tempWelcome.style.color = '#ffc2d1';
+        tempWelcome.style.padding = '6px 16px';
+        tempWelcome.style.borderRadius = '40px';
+        tempWelcome.style.fontSize = '0.7rem';
+        tempWelcome.style.fontWeight = 'bold';
+        tempWelcome.style.zIndex = '999';
+        tempWelcome.style.backdropFilter = 'blur(8px)';
+        tempWelcome.style.border = '1px solid #ffa5bb';
+        document.body.appendChild(tempWelcome);
+        setTimeout(() => {
+            tempWelcome.style.opacity = '0';
+            setTimeout(() => tempWelcome.remove(), 800);
+        }, 3500);
+    });
+</script>
+</body>
+</html>
